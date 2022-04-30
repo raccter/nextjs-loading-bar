@@ -1,0 +1,42 @@
+.loading-bar-container {
+    position: relative;
+    box-sizing: content-box;
+    display: block;
+    padding: 5px;
+    width: 500px;
+    height: 10px;
+}
+
+.loading-bar {
+    z-index: 0;
+    position: absolute;
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+.loading-bar-filled {
+    z-index: 1;
+    position: absolute;
+    background-color: #00bcd4;
+    border-radius: 100px;
+    height: 100%;
+
+    min-width: 4%;
+    max-width: calc(100% - 5px);
+
+    transition: width 0.15s;
+    transform-style: preserve-3d;
+}
+
+.loading-bar-filled::after {
+    position: absolute;
+    border-radius: 100px;
+    transform: translateZ(-2px);
+    display: inline;
+    content: "";
+    background-color: #0098ac;
+    height: 100%;
+    width: calc(100% + 5px);
+}
